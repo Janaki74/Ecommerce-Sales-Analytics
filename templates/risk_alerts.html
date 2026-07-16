@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Risk Alerts</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="layout">
+
+    <aside class="sidebar">
+        <h2>Sales Advisor</h2>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/product-advisor">Product Advisor</a>
+        <a href="/risk-alerts">Risk Alerts</a>
+        <a href="/export">Export Excel</a>
+        <button onclick="toggleTheme()">Dark / Light</button>
+        <a href="/logout">Logout</a>
+    </aside>
+
+    <main class="main">
+        <div class="hero risk">
+            <h1>Profit Risk Alerts</h1>
+            <p>Products with negative profit are shown here for pricing and discount review.</p>
+        </div>
+
+        <section class="table-box">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Product Name</th>
+                        <th>Sales</th>
+                        <th>Profit</th>
+                        <th>Average Discount</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for row in risk_data %}
+                    <tr>
+                        <td>{{ row["Product Name"] }}</td>
+                        <td>₹{{ row["Sales"] }}</td>
+                        <td class="loss">₹{{ row["Profit"] }}</td>
+                        <td>{{ row["Discount"] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+    </main>
+</div>
+
+<script src="/static/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+Row ID,Order ID,Order Date,Ship Date,Ship Mode,Customer ID,Customer Name,Segment,Country,City,State,Postal Code,Region,Product ID,Category,Sub-Category,Product Name,Sales,Quantity,Discount,Profit,Year,Month,Month Name,Delivery Days,Profit Margin
+1,CA-2016-152156,2016-11-08,2016-11-11,Second Class,CG-12520,Claire Gute,Consumer,United States,Henderson,Kentucky,42420,South,FUR-BO-10001798,Furniture,Bookcases,Bush Somerset Collection Bookcase,261.96,2,0.0,41.9136,2016,11,November,3,16.0
+2,CA-2016-152156,2016-11-08,2016-11-11,Second Class,CG-12520,Claire Gute,Consumer,United States,Henderson,Kentucky,42420,South,FUR-CH-10000454,Furniture,Chairs,"Hon Deluxe Fabric Upholstered Stacking Chairs, Rounded Back",731.94,3,0.0,219.582,2016,11,November,3,30.0
+3,CA-2016-138688,2016-06-12,2016-06-16,Second Class,DV-13045,Darrin Van Huff,Corporate,United States,Los Angeles,California,90036,West,OFF-LA-10000240,Office Supplies,Labels,Self-Adhesive Address Labels for Typewriters by Universal,14.62,2,0.0,6.8714,2016,6,June,4,47.0
+4,US-2015-108966,2015-10-11,2015-10-18,Standard Class,SO-20335,Sean O'Donnell,Consumer,United States,Fort Lauderdale,Florida,33311,South,FUR-TA-10000577,Furniture,Tables,Bretford CR4500 Series Slim Rectangular Table,957.5775,5,0.45,-383.031,2015,10,October,7,-40.0
+5,US-2015-108966,2015-10-11,2015-10-18,Standard Class,SO-20335,Sean O'Donnell,Consumer,United States,Fort Lauderdale,Florida,33311,South,OFF-ST-10000760,Office Supplies,Storage,Eldon Fold 'N Roll Cart System,22.368,2,0.2,2.5164,2015,10,October,7,11.25
+6,CA-2014-115812,2014-06-09,2014-06-14,Standard Class,BH-11710,Brosina Hoffman,Consumer,United States,Los Angeles,California,90032,West,FUR-FU-10001487,Furniture,Furnishings,"Eldon Expressions Wood and Plastic Desk Accessories, Cherry Wood",48.86,7,0.0,14.1694,2014,6,June,5,29.0
+7,CA-2014-115812,2014-06-09,2014-06-14,Standard Class,BH-11710,Brosina Hoffman,Consumer,United States,Los Angeles,California,90032,West,OFF-AR-10002833,Office Supplies,Art,Newell 322,7.28,4,0.0,1.9656,2014,6,June,5,27.0
+8,CA-2014-115812,2014-06-09,2014-06-14,Standard Class,BH-11710,Brosina Hoffman,Consumer,United States,Los Angeles,California,90032,West,TEC-PH-10002275,Technology,Phones,Mitel 5320 IP Phone VoIP phone,907.152,6,0.2,90.7152,2014,6,June,5,10.0
+9,CA-2014-115812,2014-06-09,2014-06-14,Standard Class,BH-11710,Brosina Hoffman,Consumer,United States,Los Angeles,California,90032,West,OFF-BI-10003910,Office Supplies,Binders,DXL Angle-View Binders with Locking Rings by Samsill,18.504,3,0.2,5.7825,2014,6,June,5,31.25
+10,CA-2014-115812,2014-06-09,2014-06-14,Standard Class,BH-11710,Brosina Hoffman,Consumer,United States,Los Angeles,California,90032,West,OFF-AP-10002892,Office Supplies,Appliances,Belkin F5C206VTEL 6 Outlet Surge,114.9,5,0.0,34.47,2014,6,June,5,30.0
+
+total_sales,total_profit,total_orders,total_customers
+2297200.86,286397.02,5009,793
+
+Category,total_sales
+Technology,836154.03
+Furniture,741999.8
+Office Supplies,719047.03
+
+Region,total_profit
+West,108418.45
+East,91522.78
+South,46749.43
+Central,39706.36
+
+Product Name,total_sales
+Canon imageCLASS 2200 Advanced Copier,61599.82
+Fellowes PB500 Electric Punch Plastic Comb Binding Machine with Manual Bind,27453.38
+Cisco TelePresence System EX90 Videoconferencing Unit,22638.48
+HON 5400 Series Task Chairs for Big and Tall,21870.58
+GBC DocuBind TL300 Electric Binding System,19823.48
+GBC Ibimaster 500 Manual ProClick Binding System,19024.5
+Hewlett Packard LaserJet 3310 Copier,18839.69
+"HP Designjet T520 Inkjet Large Format Printer - 24"" Color",18374.9
+GBC DocuBind P400 Electric Binding System,17965.07
+High Speed Automatic Electric Letter Opener,17030.31
+
+Customer Name,total_sales,total_profit
+Sean Miller,25043.05,-1980.74
+Tamara Chand,19052.22,8981.32
+Raymond Buch,15117.34,6976.1
+Tom Ashbrook,14595.62,4703.79
+Adrian Barton,14473.57,5444.81
+Ken Lonsdale,14175.23,806.86
+Sanjit Chand,14142.33,5757.41
+Hunter Lopez,12873.3,5622.43
+Sanjit Engle,12209.44,2650.68
+Christopher Conant,12129.07,2177.05

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Advisor</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="layout">
+
+    <aside class="sidebar">
+        <h2>Sales Advisor</h2>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/product-advisor">Product Advisor</a>
+        <a href="/risk-alerts">Risk Alerts</a>
+        <a href="/export">Export Excel</a>
+        <button onclick="toggleTheme()">Dark / Light</button>
+        <a href="/logout">Logout</a>
+    </aside>
+
+    <main class="main">
+        <div class="hero">
+            <h1>Product Sales Advisor</h1>
+            <p>Search a product and get sales, profit, region, month, and recommendation.</p>
+        </div>
+
+        <form method="POST" class="search-box">
+            <input type="text" name="product_name" placeholder="Enter product name..." value="{{ product_name }}" required>
+            <button type="submit">Analyze Product</button>
+        </form>
+
+        {% if result %}
+        <section class="cards">
+            <div class="card">
+                <h3>Total Sales</h3>
+                <p>₹{{ result.total_sales }}</p>
+            </div>
+            <div class="card">
+                <h3>Total Profit</h3>
+                <p>₹{{ result.total_profit }}</p>
+            </div>
+            <div class="card">
+                <h3>Best Month</h3>
+                <p>{{ result.best_month }}</p>
+            </div>
+            <div class="card">
+                <h3>Best Region</h3>
+                <p>{{ result.best_region }}</p>
+            </div>
+        </section>
+
+        <section class="insights">
+            <h2>Product Recommendation</h2>
+            <p>🤖 {{ result.recommendation }}</p>
+            <p>Weak Region: <b>{{ result.weak_region }}</b></p>
+            <p>Worst Month: <b>{{ result.worst_month }}</b></p>
+        </section>
+        {% elif product_name %}
+        <section class="insights">
+            <h2>No Product Found</h2>
+            <p>Try typing a shorter product name.</p>
+        </section>
+        {% endif %}
+    </main>
+</div>
+
+<script src="/static/script.js"></script>
+
+</body>
+</html>

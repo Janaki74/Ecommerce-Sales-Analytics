@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>E-Commerce Analytics Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+
+    <aside class="sidebar">
+        <h2>Analytics</h2>
+
+        <form method="POST">
+            <button name="section" value="overview">Dashboard Overview</button>
+            <button name="section" value="product">Product Analysis</button>
+            <button name="section" value="monthly">Monthly Trend</button>
+            <button name="section" value="region">Area-wise Sales</button>
+            <button name="section" value="segment">Customer Segment</button>
+            <button name="section" value="insights">AI Insights</button>
+        </form>
+    </aside>
+
+    <main class="main-content">
+
+        <h1>E-Commerce Sales Analytics Dashboard</h1>
+
+        <div class="cards">
+            <div class="card">
+                <h3>Total Sales</h3>
+                <p>₹{{ total_sales }}</p>
+            </div>
+
+            <div class="card">
+                <h3>Total Profit</h3>
+                <p>₹{{ total_profit }}</p>
+            </div>
+
+            <div class="card">
+                <h3>Total Orders</h3>
+                <p>{{ total_orders }}</p>
+            </div>
+
+            <div class="card">
+                <h3>Total Customers</h3>
+                <p>{{ total_customers }}</p>
+            </div>
+        </div>
+
+        <section class="insight-box">
+            <h2>AI Recommendation</h2>
+            <p>{{ suggestion }}</p>
+        </section>
+
+        <section class="chart-box">
+            <div id="chart"></div>
+        </section>
+
+        <section class="table-box">
+            <h2>Data Table</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        {% if table_data %}
+                            {% for key in table_data[0].keys() %}
+                                <th>{{ key }}</th>
+                            {% endfor %}
+                        {% endif %}
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for row in table_data %}
+                        <tr>
+                            {% for value in row.values() %}
+                                <td>{{ value }}</td>
+                            {% endfor %}
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+</div>
+
+<script>
+    var graph = {{ graph_json | safe }};
+    Plotly.newPlot("chart", graph.data, graph.layout);
+</script>
+
+</body>
+</html>

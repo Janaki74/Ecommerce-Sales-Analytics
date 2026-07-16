@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Sales Advisor</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+
+<div class="layout">
+
+    <aside class="sidebar">
+        <h2>Sales Advisor</h2>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/product-advisor">Product Advisor</a>
+        <a href="/risk-alerts">Risk Alerts</a>
+        <a href="/export">Export Excel</a>
+        <button onclick="toggleTheme()">Dark / Light</button>
+        <a href="/logout">Logout</a>
+    </aside>
+
+    <main class="main">
+
+        <div class="hero">
+            <h1>Smart E-Commerce Sales Advisor</h1>
+            <p>Advanced analytics dashboard with filters, insights, risk alerts, and recommendations.</p>
+        </div>
+
+        <form method="POST" class="filters">
+            <select name="region">
+                {% for r in regions %}
+                    <option value="{{ r }}" {% if r == selected_region %}selected{% endif %}>{{ r }}</option>
+                {% endfor %}
+            </select>
+
+            <select name="category">
+                {% for c in categories %}
+                    <option value="{{ c }}" {% if c == selected_category %}selected{% endif %}>{{ c }}</option>
+                {% endfor %}
+            </select>
+
+            <select name="segment">
+                {% for s in segments %}
+                    <option value="{{ s }}" {% if s == selected_segment %}selected{% endif %}>{{ s }}</option>
+                {% endfor %}
+            </select>
+
+            <select name="month">
+                {% for m in months %}
+                    <option value="{{ m }}" {% if m == selected_month %}selected{% endif %}>{{ m }}</option>
+                {% endfor %}
+            </select>
+
+            <button type="submit">Apply Filters</button>
+        </form>
+
+        <section class="cards">
+            <div class="card">
+                <h3>Total Sales</h3>
+                <p>₹{{ kpis.total_sales }}</p>
+            </div>
+            <div class="card">
+                <h3>Total Profit</h3>
+                <p>₹{{ kpis.total_profit }}</p>
+            </div>
+            <div class="card">
+                <h3>Total Orders</h3>
+                <p>{{ kpis.total_orders }}</p>
+            </div>
+            <div class="card">
+                <h3>Total Customers</h3>
+                <p>{{ kpis.total_customers }}</p>
+            </div>
+        </section>
+
+        <section class="summary-grid">
+            <div class="summary-card">Best Region: <b>{{ summary.best_region }}</b></div>
+            <div class="summary-card">Weak Region: <b>{{ summary.weak_region }}</b></div>
+            <div class="summary-card">Best Category: <b>{{ summary.best_category }}</b></div>
+            <div class="summary-card">Best Month: <b>{{ summary.best_month }}</b></div>
+            <div class="summary-card">Risk Products: <b>{{ summary.risk_products }}</b></div>
+        </section>
+
+        <section class="insights">
+            <h2>AI-Generated Business Insights</h2>
+            {% for insight in insights %}
+                <p>🤖 {{ insight }}</p>
+            {% endfor %}
+        </section>
+
+        <section class="charts">
+            <div class="chart"><div id="chart1"></div></div>
+            <div class="chart"><div id="chart2"></div></div>
+            <div class="chart"><div id="chart3"></div></div>
+            <div class="chart"><div id="chart4"></div></div>
+        </section>
+
+    </main>
+</div>
+
+<script>
+    var graphs = {{ graphs | safe }};
+    Plotly.newPlot("chart1", graphs[0].data, graphs[0].layout);
+    Plotly.newPlot("chart2", graphs[1].data, graphs[1].layout);
+    Plotly.newPlot("chart3", graphs[2].data, graphs[2].layout);
+    Plotly.newPlot("chart4", graphs[3].data, graphs[3].layout);
+</script>
+
+<script src="/static/script.js"></script>
+
+</body>
+</html>

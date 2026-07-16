@@ -1,0 +1,362 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #eef2f7;
+    color: #111827;
+}
+
+/* Login Page */
+
+.login-body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #0f172a, #2563eb);
+}
+
+.login-card {
+    background: white;
+    width: 390px;
+    padding: 35px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 20px 45px rgba(0,0,0,0.25);
+}
+
+.login-card h1 {
+    color: #2563eb;
+    margin-bottom: 10px;
+}
+
+.login-card p {
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.login-card input {
+    width: 100%;
+    padding: 13px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.login-card button {
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 10px;
+    background: #2563eb;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.error {
+    background: #fee2e2;
+    color: #991b1b;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+
+/* Layout */
+
+.layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 260px;
+    background: #0f172a;
+    color: white;
+    padding: 25px 18px;
+    position: fixed;
+    height: 100vh;
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #ffffff;
+}
+
+.sidebar a,
+.sidebar button {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    background: transparent;
+    color: white;
+    padding: 13px 15px;
+    margin-bottom: 10px;
+    border: none;
+    text-align: left;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.sidebar a:hover,
+.sidebar button:hover {
+    background: #2563eb;
+}
+
+.main {
+    margin-left: 260px;
+    padding: 28px;
+    width: calc(100% - 260px);
+}
+
+/* Header */
+
+.hero {
+    background: white;
+    padding: 26px;
+    border-radius: 18px;
+    margin-bottom: 22px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.hero h1 {
+    color: #2563eb;
+    margin-bottom: 8px;
+}
+
+.hero p {
+    color: #555;
+}
+
+.hero.risk h1 {
+    color: #dc2626;
+}
+
+/* Filters */
+
+.filters,
+.search-box {
+    background: white;
+    padding: 20px;
+    border-radius: 16px;
+    margin-bottom: 22px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.filters select,
+.search-box input {
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #cbd5e1;
+    min-width: 160px;
+}
+
+.search-box input {
+    flex: 1;
+}
+
+.filters button,
+.search-box button {
+    padding: 12px 18px;
+    border: none;
+    background: #2563eb;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Cards */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-bottom: 22px;
+}
+
+.card {
+    background: white;
+    padding: 24px;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    border-top: 5px solid #2563eb;
+}
+
+.card h3 {
+    color: #64748b;
+    margin-bottom: 12px;
+}
+
+.card p {
+    font-size: 25px;
+    font-weight: bold;
+    color: #2563eb;
+}
+
+/* Executive Summary */
+
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 14px;
+    margin-bottom: 22px;
+}
+
+.summary-card {
+    background: white;
+    padding: 18px;
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    text-align: center;
+    font-size: 14px;
+}
+
+.summary-card b {
+    color: #2563eb;
+}
+
+/* Insights */
+
+.insights {
+    background: white;
+    padding: 22px;
+    border-radius: 18px;
+    margin-bottom: 22px;
+    border-left: 6px solid #2563eb;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.insights h2 {
+    margin-bottom: 14px;
+}
+
+.insights p {
+    margin-bottom: 9px;
+    line-height: 1.5;
+}
+
+/* Charts */
+
+.charts {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+    margin-bottom: 22px;
+}
+
+.chart {
+    background: white;
+    padding: 18px;
+    border-radius: 18px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    min-height: 420px;
+}
+
+/* Tables */
+
+.table-box {
+    background: white;
+    padding: 22px;
+    border-radius: 18px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background: #2563eb;
+    color: white;
+    padding: 13px;
+    text-align: left;
+}
+
+td {
+    padding: 11px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+tr:hover {
+    background: #f1f5f9;
+}
+
+.loss {
+    color: #dc2626;
+    font-weight: bold;
+}
+
+/* Dark Mode */
+
+.dark {
+    background: #020617;
+    color: #e5e7eb;
+}
+
+.dark .main {
+    background: #020617;
+}
+
+.dark .hero,
+.dark .filters,
+.dark .search-box,
+.dark .card,
+.dark .summary-card,
+.dark .insights,
+.dark .chart,
+.dark .table-box,
+.dark .login-card {
+    background: #111827;
+    color: #e5e7eb;
+}
+
+.dark .hero p,
+.dark .card h3 {
+    color: #cbd5e1;
+}
+
+.dark table td {
+    border-bottom: 1px solid #374151;
+}
+
+.dark tr:hover {
+    background: #1f2937;
+}
+
+/* Responsive */
+
+@media (max-width: 1000px) {
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+    }
+
+    .layout {
+        flex-direction: column;
+    }
+
+    .main {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .cards,
+    .charts,
+    .summary-grid {
+        grid-template-columns: 1fr;
+    }
+}
